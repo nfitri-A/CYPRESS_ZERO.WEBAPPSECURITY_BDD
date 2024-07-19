@@ -1,11 +1,12 @@
+import SearchPage from './search.page';
 const { Given, When, Then} = require('@badeball/cypress-cucumber-preprocessor');
 
 Given ('when I browsed the website zeroapp', () => {
-    cy.visit('http://zero.webappsecurity.com/index.html');
+    SearchPage.visit()
 })
 
 When ('search for a word online in the searchbox', () => {
-    cy.get('#searchTerm').type('online {enter}')
+    SearchPage.searchTerm('online {enter}');
 })
 
 Then ('successfully enter the search results page', () => {
